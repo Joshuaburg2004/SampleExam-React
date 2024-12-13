@@ -1,0 +1,2 @@
+# Repo for the finished version of the sample exam up to and including Task 4
+For questions about my methodoligy or just general coding questions: 1051636@hr.nl on teams or on the webmail should always be open 
