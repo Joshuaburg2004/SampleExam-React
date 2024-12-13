@@ -1,0 +1,77 @@
+Task 0: 
+Create the folder structure as below and then preform the given tasks: 
+MainFolder
+	npx create-react-app frontend --template typescript 
+			cd frontend
+			npm start
+	(dotnet new web -o backend)
+			cd backend
+			dotnet run
+Task 0 in types.ts
+create a discriminated union of type
+type Person = Student | Teacher | Staff 
+where Student is name, grade,
+Teacher has attributes name, subjects[]
+Staff has name and department.
+ 
+Solution Task 0: (since a lot is going to depend on Task 0
+type Person = Student | Teacher | Staff;
+type Student = {
+  name: string;
+  grade: number;
+  role: "student";
+};
+type Teacher = {
+  name: string;
+  subjects: string [];
+  role: "teacher";
+};
+type Staff = {
+  name: string;
+  department: string;
+  role: "staff";
+};
+
+Task 1: 
+Create a stateless React component named PersonCard as a function component. The component should accept a person as property and display the person’s name and a role, and only render the properties if the person has them
+
+Task 2: 
+Create a React class component named PersonForm that allows users to input information for creating a person. 
+The form should collect the following details:
+•	Name: A text input field to enter the person's name.
+•	Role: A dropdown menu to select the role of the person, with three options: Student, Teacher, and Staff.
+•	Role-Specific Details:
+o	If the role is Student, a field to input the student's Grade.
+o	If the role is Teacher, a field to input the Subjects (comma-separated).
+o	If the role is Staff, a field to input the Department.
+ 
+Upon clicking the "Submit" button, the form should display an alert with the following information:
+•	The name entered by the user.
+•	The selected role.
+•	The relevant additional details based on the selected role (e.g., grade for students, subjects for teachers, or department for staff).
+ 
+The form should manage its state using React class components and display only relevant information.
+ 
+	
+Task 3:
+Create a React component named PersonList that:
+1.	Accepts an array of Person objects as a prop.
+2.	Uses the PersonCard component to render each person in the list. Not using PersonCard will result in a 5-point deduction.
+3.	Provide a toggle button to sort the list by name in ascending or descending order.
+ 
+Lunch Break : be back before 12:40
+ 
+Task 4:
+Write a TypeScript curried function filterList that:
+1.	Accepts an array of generic objects (T[]) as the first argument.
+2.	Accepts a lambda expression (predicate function) as the second argument.
+3.	Returns a custom List<T>. 
+Write some constructor functions for the types Empty and Full
+ 
+Supported Data Structure of List for Task 4
+type Empty = { kind: "empty" };
+type Full<T> = { kind: "node"; value: T; next: List<T> }
+ 
+type List<T> = 
+  | Full<T>
+  | Empty
